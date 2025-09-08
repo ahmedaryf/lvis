@@ -1,0 +1,55 @@
+"use client";
+import React from "react";
+import { Autoplay, EffectFade } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
+
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+import { urlFor } from "@/sanity/lib/image";
+
+export default function HeroSection({ data }: { data: any }) {
+  return (
+    <div className='md:h-screen overflow-hidden '>
+      <div>
+        <Swiper
+          modules={[Autoplay, EffectFade]}
+          spaceBetween={30}
+          slidesPerView={1}
+          speed={3000}
+          effect='fade'
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          //   breakpoints={{
+          //     0: {
+          //       slidesPerView: 1,
+          //     },
+          //     768: {
+          //       slidesPerView: 3,
+          //     },
+          //           }}
+        >
+          {data &&
+            data.map((item: any, index: number) => (
+              <SwiperSlide key={index}>
+                {item.image && (
+                  <Image
+                    src={urlFor(item.image)}
+                    width={1000}
+                    height={800}
+                    alt={item.title}
+                    className='aspect-[16/9] object-cover w-full h-[80vh] md:h-auto zoom-slow'
+                  />
+                )}
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
+    </div>
+  );
+}
