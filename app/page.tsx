@@ -1,6 +1,8 @@
 import React from "react";
 import HeroSection from "./components/HeroSection";
 import { client } from "@/sanity/lib/client";
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
 
 export const revalidate = 60;
 
@@ -13,34 +15,45 @@ async function getHeroData() {
   return data;
 }
 
+async function getProperties() {
+  const query = `*[_type == "properties"] | order(propertyName asc){
+    propertyName,
+    coverImage
+  }`;
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  return data;
+}
+
 export default async function page() {
   const heroData = await getHeroData();
+  const properties = await getProperties();
+
   return (
     <div>
       <HeroSection data={heroData} />
-      <div className='h-screen'>
-        <h1 className='text-3xl md:text-6xl font-bold text-center mt-12'>
+      <div className='min-h-screen w-full md:w-[80vw] mx-auto bg-neutral-50 mb-12 md:mb-24'>
+        <h1 className='text-3xl md:text-6xl font-thin text-center mt-12 md:mt-24 pt-12'>
           Welcome to LVIS Hotels
         </h1>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 px-6 md:px-24'>
-          <div>
-            <h2 className='text-3xl md:text-4xl font-thin text-center mb-2'>
-              Blencura
-            </h2>
-            <div className='bg-amber-200 h-32'></div>
-          </div>
-          <div>
-            <h2 className='text-3xl md:text-4xl font-thin text-center mb-2'>
-              Pool
-            </h2>
-            <div className='bg-blue-200 h-32'></div>
-          </div>
-          <div>
-            <h2 className='text-3xl md:text-4xl font-thin text-center mb-2'>
-              Village
-            </h2>
-            <div className='bg-green-200 h-32'></div>
-          </div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-24 px-6 md:px-24'>
+          {properties.map((property: any, index: number) => (
+            <div key={index}>
+              <h2 className='text-3xl md:text-4xl font-thin text-center mb-2'>
+                {property.propertyName}
+              </h2>
+              <div className='bg-amber-200 '>
+                {
+                  <Image
+                    src={urlFor(property.coverImage)}
+                    alt='Cover Image'
+                    width={200}
+                    height={200}
+                    className='aspect-[16/9] object-cover w-full'
+                  />
+                }
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

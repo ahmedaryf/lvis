@@ -3,15 +3,15 @@ import Link from "next/link";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 
 import { FaPhone } from "react-icons/fa6";
-import { ThemeToggler } from "./ThemeToggler";
+// import { ThemeToggler } from "./ThemeToggler";
 // import { IoIosMail } from "react-icons/io";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='min-h-[60vh] w-screen duration-500 dark:border-t border-white  flex flex-col justify-between py-6 '>
-      <div className=' md:flex justify-between items-start px-10'>
+    <footer className='min-h-[60vh] w-screen bg-zinc-50 duration-500 dark:border-t border-white  flex flex-col justify-between py-6 '>
+      <div className=' md:flex justify-between items-start px-10 w-full md:w-[80vw] mx-auto mt-12 '>
         <div className='flex md:hidden gap-2 md:gap-4 justify-center items-center'>
           <Link href={""}>
             <AiFillFacebook size={24} />
@@ -56,9 +56,9 @@ export default function Footer() {
           <div></div>
         </div>
       </div>
-      <div className='text-center self-center'>
+      <div className='text-center self-center '>
         <div className=''>
-          <ThemeToggler />
+          {/* <ThemeToggler /> */}
           <h5 className='text-sm'>© {year} LVIS Hotels</h5>
         </div>
 
