@@ -18,7 +18,8 @@ async function getHeroData() {
 async function getProperties() {
   const query = `*[_type == "properties"] | order(propertyName asc){
     propertyName,
-    coverImage
+    coverImage,
+    shortDescription
   }`;
   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
@@ -31,14 +32,14 @@ export default async function page() {
   return (
     <div>
       <HeroSection data={heroData} />
-      <div className='min-h-screen w-full md:w-[80vw] mx-auto bg-neutral-50 mb-12 md:mb-24'>
+      <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
         <h1 className='text-3xl md:text-6xl font-thin text-center mt-12 md:mt-24 pt-12'>
           Welcome to LVIS Hotels
         </h1>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-24 px-6 md:px-24'>
           {properties.map((property: any, index: number) => (
-            <div key={index}>
-              <h2 className='text-3xl md:text-4xl font-thin text-center mb-2'>
+            <div key={index} className='bg-gray-100'>
+              <h2 className='text-3xl md:text-4xl font-thin text-center mb-2 mt-2'>
                 {property.propertyName}
               </h2>
               <div className='bg-amber-200 '>
@@ -51,6 +52,16 @@ export default async function page() {
                     className='aspect-[16/9] object-cover w-full'
                   />
                 }
+              </div>
+              <div className='flex flex-col justify-between'>
+                <div className='p-2 md:p-4'>
+                  <h6>{property.shortDescription}</h6>
+                </div>
+                <div>
+                  <button className='bg-gray-500 px-2 py-1 w-full text-white mt-auto'>
+                    Learn more
+                  </button>
+                </div>
               </div>
             </div>
           ))}

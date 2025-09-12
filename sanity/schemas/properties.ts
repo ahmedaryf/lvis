@@ -16,5 +16,10 @@ export const properties = defineType({
       type: "image",
       options: { hotspot: true },
     }),
+    defineField({
+      name: "shortDescription",
+      title: "Short Description",
+      type: "text",
+    }),
   ],
 });
