@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
+import HeroVideoComponent from "./components/HeroVideoComponent";
 
 export const revalidate = 60;
 
@@ -31,7 +32,8 @@ export default async function page() {
 
   return (
     <div>
-      <HeroSection data={heroData} />
+      {/* <HeroSection data={heroData} /> */}
+      <HeroVideoComponent />
       <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
         <h1 className='text-3xl md:text-6xl font-thin text-center mt-12 md:mt-24 pt-12'>
           Welcome to LVIS Hotels
