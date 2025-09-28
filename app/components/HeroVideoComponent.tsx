@@ -10,7 +10,7 @@ export default function HeroVideoComponent() {
         playsInline
         poster='/images/videoCover.jpg'
         className='w-full h-screen object-cover'>
-        <source src='/videos/heroVideo.mp4' type='video/mp4' />
+        <source src='/videos/LVIS-heroVideo.mp4' type='video/mp4' />
       </video>
     </div>
   );

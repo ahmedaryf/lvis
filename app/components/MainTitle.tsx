@@ -32,7 +32,7 @@ export default function MainTitle() {
   );
   return (
     <div ref={containerRef}>
-      <h1 className='text-3xl md:text-6xl font-thin text-center mt-12 md:mt-24 pt-12 splitText'>
+      <h1 className='text-3xl md:text-6xl font-semibold text-center mt-12 md:mt-24 pt-12 splitText'>
         LVIS Hotels Maldives
       </h1>
     </div>
