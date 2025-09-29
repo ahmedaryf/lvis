@@ -3,9 +3,9 @@ import React from "react";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-import HeroVideoComponent from "./components/HeroVideoComponent";
-import SmoothScroll from "./components/SmoothScroll";
 import MainTitle from "./components/MainTitle";
+import SmoothScroll from "./components/SmoothScroll";
+import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
 
 export const revalidate = 60;
 
@@ -33,10 +33,11 @@ export default async function page() {
   const properties = await getProperties();
 
   return (
-    <SmoothScroll>
-      <div>
+    <div>
+      <SmoothScroll>
         {/* <HeroSection data={heroData} /> */}
-        <HeroVideoComponent />
+        {/* <HeroVideoComponent /> */}
+        <OptimizedVideoComponent />
         <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
           <MainTitle />
           <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-24 px-6 md:px-24'>
@@ -72,7 +73,7 @@ export default async function page() {
             ))}
           </div>
         </div>
-      </div>
-    </SmoothScroll>
+      </SmoothScroll>
+    </div>
   );
 }
