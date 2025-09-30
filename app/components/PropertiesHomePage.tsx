@@ -97,7 +97,7 @@ export default function PropertiesHomePage({ data }: { data: any }) {
   );
 
   return (
-    <div className='px-1 py-6 md:p-24' ref={mainRef}>
+    <div className=' py-6 md:p-24' ref={mainRef}>
       {data.slice(0, 3).map((item: any, index: number) => (
         <div
           key={index}
@@ -110,7 +110,7 @@ export default function PropertiesHomePage({ data }: { data: any }) {
               width={800}
               height={600}
               alt='Image'
-              className='w-full h-full aspect-[4/3] object-cover image rounded-xl'
+              className='w-full h-full aspect-[4/3] md:aspect-[16/9] object-cover image md:rounded-xl '
             />
           </div>
           <div className='text-center w-full md:w-1/3 px-6 text'>
