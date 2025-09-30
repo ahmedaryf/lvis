@@ -2,11 +2,12 @@
 import { useGSAP } from "@gsap/react";
 import React, { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function PropertiesHomePage({ data }: { data: any }) {
   const [domReady, setDomReady] = useState(false);
@@ -58,6 +59,12 @@ export default function PropertiesHomePage({ data }: { data: any }) {
 
         if (!image || !text) return;
 
+        const split = new SplitText(text, {
+          type: "lines",
+          linesClass: "lineChild",
+          mask: "lines",
+        });
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: item,
@@ -82,14 +89,15 @@ export default function PropertiesHomePage({ data }: { data: any }) {
         );
 
         tl.from(
-          text,
+          split.lines,
           {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: "power2.out",
+            opacity: 0.5,
+            y: 100,
+            duration: 2,
+            ease: "power2.inOut",
+            stagger: 0.06,
           },
-          "-=1"
+          "-= 2"
         );
       });
     },
@@ -113,11 +121,12 @@ export default function PropertiesHomePage({ data }: { data: any }) {
               className='w-full h-full aspect-[4/3] md:aspect-[16/9] object-cover image md:rounded-xl '
             />
           </div>
-          <div className='text-center w-full md:w-1/3 px-6 text'>
+          <div className='text-center w-full md:w-1/3 px-6 text leading-8'>
             <h5 className='text-xl md:text-3xl text-zinc-400 mb-4 uppercase body-font'>
               {item.propertyName}
             </h5>
             <h5 className='text-zinc-500 body-font'>{item.shortDescription}</h5>
+
             <button className='border border-zinc-400 px-4 py-1 text-xs text-zinc-400 mt-4 rounded-xl body-font hover:bg-zinc-400 hover:text-white cursor-pointer duration-300 tracking-wider'>
               Learn more
             </button>
