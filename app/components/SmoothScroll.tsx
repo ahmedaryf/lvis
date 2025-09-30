@@ -25,7 +25,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
   }, [lenis]);
 
   return (
-    <ReactLenis root options={{ lerp: 0.05 }}>
+    <ReactLenis root options={{ lerp: 0.1 }}>
       {children}
     </ReactLenis>
   );
