@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: PT_Serif;
+  src: url("/fonts/PT_Serif/PTSerif-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.body-font {
+  font-family: PT_Serif, sans-serif;
+}
+
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 
@@ -118,4 +129,22 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.containerr {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+}
+
+.clip {
+  background: #000;
+  clip-path: inset(25% 0% 25% 0%);
+  overflow: hidden;
 }

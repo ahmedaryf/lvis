@@ -6,6 +6,7 @@ import { urlFor } from "@/sanity/lib/image";
 import MainTitle from "./components/MainTitle";
 import SmoothScroll from "./components/SmoothScroll";
 import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
+import PropertiesHomePage from "./components/PropertiesHomePage";
 
 export const revalidate = 60;
 
@@ -40,7 +41,7 @@ export default async function page() {
         <OptimizedVideoComponent />
         <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
           <MainTitle />
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-24 px-6 md:px-24'>
+          {/* <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-24 px-6 md:px-24'>
             {properties.map((property: any, index: number) => (
               <div
                 key={index}
@@ -71,6 +72,9 @@ export default async function page() {
                 </div>
               </div>
             ))}
+          </div> */}
+          <div>
+            <PropertiesHomePage data={properties} />
           </div>
         </div>
       </SmoothScroll>

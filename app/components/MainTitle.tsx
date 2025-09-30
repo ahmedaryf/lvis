@@ -66,7 +66,7 @@ export default function MainTitle() {
         mask: "lines",
       });
 
-      gsap.from(split.chars, {
+      gsap.from(split.lines, {
         scrollTrigger: {
           trigger: ".splitText",
           start: "top 70%",
@@ -74,8 +74,8 @@ export default function MainTitle() {
           toggleActions: "play none none reverse",
         },
         y: 200,
-        duration: 0.3,
-        stagger: 0.03,
+        duration: 0.8,
+        stagger: 0.1,
         ease: "power2.out",
       });
     },
@@ -83,12 +83,12 @@ export default function MainTitle() {
   );
 
   return (
-    <div ref={containerRef}>
-      <h1 className='text-3xl md:text-7xl text-zinc-500 font-bold text-center mt-6 md:mt-24 pt-12 splitText uppercase tracking-wider'>
+    <div ref={containerRef} className='flex flex-col'>
+      <h1 className='text-4xl md:text-8xl text-zinc-400 font-bold text-center mt-6 md:mt-24 pt-12 splitText uppercase tracking-wider '>
         LVIS Hotels
       </h1>
-      <h6 className='text-xl md:text-4xl text-zinc-300 text-center uppercase splitText'>
-        <span className='tracking-[1rem] md:tracking-[2.6rem] inline-block'>
+      <h6 className='text-xl md:text-4xl text-zinc-300  uppercase splitText text-center body-font'>
+        <span className='tracking-[1.2rem] md:tracking-[3.6rem] inline-block'>
           Maldive
         </span>
         <span className='inline-block'>s</span>
