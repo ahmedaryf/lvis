@@ -29,10 +29,17 @@ async function getProperties() {
   return data;
 }
 
+async function getAboutusData() {
+  const query = `*[_type == "aboutus"]`;
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  return data;
+}
+
 export default async function page() {
   // const heroData = await getHeroData();
   const properties = await getProperties();
   const heroData = await getHeroData();
+  const aboutus = await getAboutusData();
 
   return (
     <div>
@@ -41,7 +48,7 @@ export default async function page() {
       {/* <OptimizedVideoComponent /> */}
 
       <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
-        <MainTitle />
+        <MainTitle text={aboutus[0].intro} />
         <div>
           <PropertiesHomePage data={properties} />
         </div>

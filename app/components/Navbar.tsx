@@ -106,10 +106,10 @@ export default function Navbar() {
           className={`duration-500 px-2 py-2  md:px-0 
             w-screen z-50 fixed`}>
           <div
-            className={`group flex justify-between w-full items-center bg-transparent duration-500 md:hover:bg-white/70 md:hover:text-zinc-500 md:dark:hover:bg-black  ${
+            className={`group flex justify-between w-full items-center bg-transparent duration-500 md:hover:bg-white/80 md:hover:text-zinc-500 md:dark:hover:bg-black  ${
               scrollPosition < 200 && path == "/"
                 ? "md:bg-transparent text-white"
-                : "md:bg-white/70 dark:md:bg-black text-zinc-500"
+                : "md:bg-white/80 dark:md:bg-black text-zinc-500"
             } md:px-12 py-4`}>
             <div className=''>
               <Link href={"/"}>
@@ -146,17 +146,17 @@ export default function Navbar() {
               </div>
             </div>
             {/* mobile */}
-            <div className='block md:hidden'>
+            <div className='block md:hidden me-2'>
               {isOpen ? (
                 <MdClose
                   onClick={() => setIsOpen(false)}
                   size={32}
-                  className=' text-gray-100 cursor-pointer'
+                  className=' text-zinc-500 cursor-pointer'
                 />
               ) : (
                 <GiHamburgerMenu
                   onClick={() => setIsOpen(true)}
-                  className='text-3xl md:text-5xl text-gray-100 cursor-pointer bg-primary dark:bg-gray-600 hover:bg-primary p-1 md:p-2 rounded'
+                  className='text-3xl md:text-5xl text-white cursor-pointer bg-zinc-300 p-1 md:p-2 rounded'
                 />
               )}
             </div>
@@ -172,7 +172,7 @@ export default function Navbar() {
                     duration: 0.5,
                     ease: [0.12, 0, 0.39, 0],
                   }}
-                  className='block absolute inset-0 overflow-y-auto h-screen bg-cover w-screen bg-primary dark:bg-gray-700 pt-8 pb-10 z-50'>
+                  className='block absolute inset-0 overflow-y-auto h-screen bg-cover w-screen bg-white  pt-8 pb-10 z-50'>
                   <motion.div
                     variants={containerVars}
                     initial='initial'
@@ -181,7 +181,7 @@ export default function Navbar() {
                     <div className='flex justify-end w-screen pe-4 md:pe-12'>
                       <MdClose
                         size={32}
-                        className='text-white cursor-pointer md:mx-6'
+                        className='text-zinc-400 cursor-pointer md:mx-6 mt-2'
                         onClick={() => setIsOpen(false)}
                       />
                     </div>
@@ -194,7 +194,7 @@ export default function Navbar() {
                         className='w-[55px] md:w-[85px] mx-auto'
                       />
                     </div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 px-6 pt-6 '>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 px-6 pt-12 '>
                       {navLinks.map((navItem, index) => (
                         <div key={index} className='pt-2 md:pt-4 px-8'>
                           <motion.div variants={linkVars}>
@@ -203,8 +203,8 @@ export default function Navbar() {
                                 href={navItem.url}
                                 onClick={() => setIsOpen(false)}
                                 className='block w-full  mx-auto'>
-                                <div className='mx-auto py-2 md:py-6 px-4  hover:bg-white/10 bg-white/5  w-full  menu-shadow rounded'>
-                                  <div className='text-xl md:text-2xl text-gray-100 uppercase tracking-wider '>
+                                <div className='mx-auto py-2 md:py-6 px-4  hover:bg-white/10 bg-zinc-400 body-font w-full  menu-shadow rounded'>
+                                  <div className='text-xl md:text-2xl text-white uppercase tracking-wider '>
                                     {navItem.name}
                                   </div>
                                 </div>

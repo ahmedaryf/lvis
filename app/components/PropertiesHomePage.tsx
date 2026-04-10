@@ -85,7 +85,7 @@ export default function PropertiesHomePage({ data }: { data: any }) {
             opacity: 1,
             duration: 1.5,
             ease: "power2.out",
-          }
+          },
         );
 
         tl.from(
@@ -97,15 +97,15 @@ export default function PropertiesHomePage({ data }: { data: any }) {
             ease: "power2.inOut",
             stagger: 0.06,
           },
-          "-= 2"
+          "-= 2",
         );
       });
     },
-    { scope: mainRef, dependencies: [domReady] }
+    { scope: mainRef, dependencies: [domReady] },
   );
 
   return (
-    <div className=' py-6 md:p-24' ref={mainRef}>
+    <div className=' py-6 md:p-24 ' ref={mainRef}>
       {data.slice(0, 3).map((item: any, index: number) => (
         <div
           key={index}

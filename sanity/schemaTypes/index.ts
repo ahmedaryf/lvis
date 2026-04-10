@@ -2,7 +2,8 @@ import { type SchemaTypeDefinition } from "sanity";
 import { hero } from "../schemas/hero";
 import { accordions } from "../schemas/accordions";
 import { properties } from "../schemas/properties";
+import { aboutus } from "../schemas/aboutus";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [hero, accordions, properties],
+  types: [hero, aboutus, accordions, properties],
 };
