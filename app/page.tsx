@@ -4,19 +4,20 @@ import { client } from "@/sanity/lib/client";
 
 import MainTitle from "./components/MainTitle";
 // import SmoothScroll from "./components/SmoothScroll";
-import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
+// import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
 import PropertiesHomePage from "./components/PropertiesHomePage";
+import HeroSection from "./components/HeroSection";
 
 export const revalidate = 60;
 
-// async function getHeroData() {
-//   const query = `*[_type == "hero"]{
-//   image,
-//   title
-//   }`;
-//   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
-//   return data;
-// }
+async function getHeroData() {
+  const query = `*[_type == "hero"]{
+  image,
+  title
+  }`;
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  return data;
+}
 
 async function getProperties() {
   const query = `*[_type == "properties"] | order(propertyName asc){
@@ -31,12 +32,14 @@ async function getProperties() {
 export default async function page() {
   // const heroData = await getHeroData();
   const properties = await getProperties();
+  const heroData = await getHeroData();
 
   return (
     <div>
-      {/* <HeroSection data={heroData} /> */}
+      <HeroSection data={heroData} />
       {/* <HeroVideoComponent /> */}
-      <OptimizedVideoComponent />
+      {/* <OptimizedVideoComponent /> */}
+
       <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
         <MainTitle />
         <div>
