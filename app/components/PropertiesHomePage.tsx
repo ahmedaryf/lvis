@@ -128,7 +128,7 @@ export default function PropertiesHomePage({ data }: { data: any }) {
             <h5 className='text-zinc-500 body-font'>{item.shortDescription}</h5>
 
             <button className='border border-zinc-400 px-4 py-1 text-xs text-zinc-400 mt-4 rounded-xl body-font hover:bg-zinc-400 hover:text-white cursor-pointer duration-300 tracking-wider'>
-              Learn more
+              Read more
             </button>
           </div>
         </div>

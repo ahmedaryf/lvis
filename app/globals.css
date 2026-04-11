@@ -12,6 +12,30 @@
   font-family: PT_Serif, sans-serif;
 }
 
+.prose strong {
+  color: white;
+}
+.custom-prose {
+  max-width: none;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+@keyframes zoomSlow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.zoom-slow {
+  animation: zoomSlow 10s ease-in-out forwards;
+}
+
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 

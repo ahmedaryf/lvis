@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "LVIS Hotels | Dharavandhoo | Hanifarubay",
-  description: "LVIS Hotels",
+  description:
+    "Affordable island stays in Dharavandhoo, Maldives, near Hanifaru Bay — home to manta rays and whale sharks",
 };
 
 export default function RootLayout({
@@ -32,7 +33,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute='class'
           defaultTheme='light'
-          enableSystem
+          enableSystem={false}
           disableTransitionOnChange>
           <Navbar />
           {children}

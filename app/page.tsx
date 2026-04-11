@@ -7,6 +7,7 @@ import MainTitle from "./components/MainTitle";
 // import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
 import PropertiesHomePage from "./components/PropertiesHomePage";
 import HeroSection from "./components/HeroSection";
+import Activities from "./components/Activities";
 
 export const revalidate = 60;
 
@@ -52,6 +53,9 @@ export default async function page() {
         <div>
           <PropertiesHomePage data={properties} />
         </div>
+      </div>
+      <div>
+        <Activities />
       </div>
     </div>
   );

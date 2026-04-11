@@ -145,6 +145,11 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
+            <Link
+              className={`border  text-center  md:w-32 px-4 text-white  rounded-md body-font uppercase text-xs py-1 bg-amber-800/80 lg:hover:bg-amber-800 `}
+              href={"/"}>
+              Book now
+            </Link>
             {/* mobile */}
             <div className='block md:hidden me-2'>
               {isOpen ? (
@@ -160,7 +165,6 @@ export default function Navbar() {
                 />
               )}
             </div>
-
             <AnimatePresence>
               {isOpen && (
                 <motion.div
@@ -185,13 +189,14 @@ export default function Navbar() {
                         onClick={() => setIsOpen(false)}
                       />
                     </div>
+
                     <div className='w-full'>
                       <Image
                         src={"/logo/logo.png"}
                         alt='Logo'
                         width={60}
                         height={60}
-                        className='w-[55px] md:w-[85px] mx-auto'
+                        className='w-[50px] mx-auto'
                       />
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 px-6 pt-12 '>
