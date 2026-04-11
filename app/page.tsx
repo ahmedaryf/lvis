@@ -8,6 +8,7 @@ import MainTitle from "./components/MainTitle";
 import PropertiesHomePage from "./components/PropertiesHomePage";
 import HeroSection from "./components/HeroSection";
 import Activities from "./components/Activities";
+import SampleComponent from "./components/SampleComponent";
 
 export const revalidate = 60;
 
@@ -51,11 +52,17 @@ export default async function page() {
       <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
         <MainTitle text={aboutus[0].intro} />
         <div>
+          <SampleComponent data={properties} />
+        </div>
+        <div>
+          <Activities />
+        </div>
+        <div className='border-t-2'>
+          <h3 className='text-xl lg:text-5xl font-bold text-red-700 text-center'>
+            Old Page
+          </h3>
           <PropertiesHomePage data={properties} />
         </div>
-      </div>
-      <div>
-        <Activities />
       </div>
     </div>
   );
