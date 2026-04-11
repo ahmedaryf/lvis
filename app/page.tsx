@@ -9,6 +9,7 @@ import PropertiesHomePage from "./components/PropertiesHomePage";
 import HeroSection from "./components/HeroSection";
 import Activities from "./components/Activities";
 import SampleComponent from "./components/SampleComponent";
+import DiningComponent from "./components/DiningComponent";
 
 export const revalidate = 60;
 
@@ -56,6 +57,9 @@ export default async function page() {
         </div>
         <div>
           <Activities />
+        </div>
+        <div>
+          <DiningComponent />
         </div>
         <div className='border-t-2'>
           <h3 className='text-xl lg:text-5xl font-bold text-red-700 text-center'>

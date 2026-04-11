@@ -13,7 +13,7 @@ export default function SampleComponent({ data }: { data: any }) {
               width={600}
               height={600}
               alt='Image'
-              className='aspect-4/3 md:aspect-video object-cover rounded-md'
+              className='aspect-4/3  object-cover rounded-md'
             />
             <h6 className='text-xl md:text-2xl text-center mt-4 text-zinc-400 mb-4 uppercase body-font'>
               {property.propertyName}
