@@ -8,7 +8,7 @@ import MainTitle from "./components/MainTitle";
 import PropertiesHomePage from "./components/PropertiesHomePage";
 import HeroSection from "./components/HeroSection";
 import Activities from "./components/Activities";
-import SampleComponent from "./components/SampleComponent";
+
 import DiningComponent from "./components/DiningComponent";
 
 export const revalidate = 60;
