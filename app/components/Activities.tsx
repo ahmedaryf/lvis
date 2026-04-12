@@ -18,7 +18,7 @@ export default async function Activities() {
       </h3>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
         {activities.map((activity: any, index: number) => (
-          <div key={index} className=' shadow-xl rounded-md'>
+          <div key={index} className=' shadow rounded-md'>
             <Image
               src={urlFor(activity.coverPhoto)}
               width={600}

@@ -16,5 +16,10 @@ export const hero = defineType({
       type: "image",
       options: { hotspot: true },
     }),
+    defineField({
+      name: "id",
+      title: "Id",
+      type: "number",
+    }),
   ],
 });

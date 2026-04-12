@@ -14,7 +14,7 @@ import DiningComponent from "./components/DiningComponent";
 export const revalidate = 60;
 
 async function getHeroData() {
-  const query = `*[_type == "hero"]{
+  const query = `*[_type == "hero"] | order(id asc){
   image,
   title
   }`;
@@ -33,7 +33,9 @@ async function getProperties() {
 }
 
 async function getAboutusData() {
-  const query = `*[_type == "aboutus"]`;
+  const query = `*[_type == "aboutus"]{
+    intro
+  }`;
   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
 }
