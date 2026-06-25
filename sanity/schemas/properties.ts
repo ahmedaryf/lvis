@@ -28,5 +28,27 @@ export const properties = defineType({
       title: "Short Description",
       type: "text",
     }),
+    defineField({
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "gallaryImages",
+              title: "Images",
+              type: "image",
+            }),
+            defineField({
+              name: "imageTitle",
+              title: "Image Title",
+              type: "string",
+            }),
+          ],
+        },
+      ],
+    }),
   ],
 });
