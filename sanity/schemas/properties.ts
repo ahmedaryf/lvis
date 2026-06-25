@@ -11,6 +11,13 @@ export const properties = defineType({
       type: "string",
     }),
     defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "propertyName" },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "coverImage",
       title: "Cover Image",
       type: "image",
@@ -20,6 +27,28 @@ export const properties = defineType({
       name: "shortDescription",
       title: "Short Description",
       type: "text",
+    }),
+    defineField({
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "gallaryImages",
+              title: "Images",
+              type: "image",
+            }),
+            defineField({
+              name: "imageTitle",
+              title: "Image Title",
+              type: "string",
+            }),
+          ],
+        },
+      ],
     }),
   ],
 });
