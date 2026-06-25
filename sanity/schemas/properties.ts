@@ -11,6 +11,13 @@ export const properties = defineType({
       type: "string",
     }),
     defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "propertyName" },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "coverImage",
       title: "Cover Image",
       type: "image",

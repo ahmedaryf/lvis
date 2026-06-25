@@ -6,6 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -107,31 +108,36 @@ export default function PropertiesHomePage({ data }: { data: any }) {
   return (
     <div className='px-4 md:px-0 py-6 md:p-24 ' ref={mainRef}>
       {data.slice(0, 3).map((item: any, index: number) => (
-        <div
-          key={index}
-          className={`property-item flex flex-col md:flex-row gap-6 md:gap-12 justify-center items-center mb-24 md:mb-52 ${
-            index === 1 ? "md:flex-row-reverse" : ""
-          }`}>
-          <div className='w-full md:w-2/3 relative'>
-            <Image
-              src={urlFor(item.coverImage)}
-              width={800}
-              height={600}
-              alt='Image'
-              className='w-full h-full aspect-[4/3] md:aspect-[16/9] object-cover image rounded-md '
-            />
-          </div>
-          <div className='text-center w-full md:w-1/3 px-6 text leading-8'>
-            <h5 className='text-xl md:text-3xl text-zinc-400 mb-4 uppercase body-font'>
-              {item.propertyName}
-            </h5>
-            <h5 className='text-zinc-500 body-font'>{item.shortDescription}</h5>
+        <Link key={index} href={`./ourhotels/${item.slug.current}`}>
+          <div
+            className={`property-item flex flex-col md:flex-row gap-6 md:gap-12 justify-center items-center mb-24 md:mb-52 ${
+              index === 1 ? "md:flex-row-reverse" : ""
+            }`}>
+            <div className='w-full md:w-2/3 relative'>
+              <Image
+                src={urlFor(item.coverImage)}
+                width={800}
+                height={600}
+                alt='Image'
+                className='w-full h-full aspect-[4/3] md:aspect-[16/9] object-cover image rounded-md'
+              />
+            </div>
+            <div className='text-center w-full md:w-1/3 px-6 text leading-8'>
+              <h5 className='text-xl md:text-3xl text-zinc-400 mb-4 uppercase body-font'>
+                {item.propertyName}
+              </h5>
+              <h5 className='text-zinc-500 body-font'>
+                {item.shortDescription}
+              </h5>
 
-            <button className='border border-zinc-400 px-4 py-1 text-xs text-zinc-400 mt-4 rounded-xl body-font hover:bg-zinc-400 hover:text-white cursor-pointer duration-300 tracking-wider'>
+              {/* <Link
+              href={`./ourhotels/${item.slug.current}`}
+              className='border border-zinc-400 px-4 py-1 text-xs text-zinc-400 mt-4 rounded-xl body-font hover:bg-zinc-400 hover:text-white cursor-pointer duration-300 tracking-wider'>
               Read more
-            </button>
+            </Link> */}
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

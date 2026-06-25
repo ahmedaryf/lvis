@@ -26,7 +26,8 @@ async function getProperties() {
   const query = `*[_type == "properties"] | order(propertyName asc){
     propertyName,
     coverImage,
-    shortDescription
+    shortDescription,
+    slug
   }`;
   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;
