@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @font-face {
   font-family: PT_Serif;
@@ -12,9 +13,9 @@
   font-family: PT_Serif, sans-serif;
 }
 
-.prose strong {
+/* .prose strong {
   color: white;
-}
+} */
 .custom-prose {
   max-width: none;
 }
