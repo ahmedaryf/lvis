@@ -12,6 +12,13 @@ export const activities = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "title" },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "coverPhoto",
       title: "Cover Photo",
       type: "image",
