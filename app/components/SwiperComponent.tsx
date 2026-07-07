@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/thumbs";
 import { urlFor } from "@/sanity/lib/image";
 
 export default function SwiperComponent({ imageData }: any) {
