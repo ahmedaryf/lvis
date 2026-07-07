@@ -28,7 +28,7 @@ export default async function page({
 
   return (
     <div className='w-full mb-12 md:mb-24'>
-      <div className='relative'>
+      <div className=''>
         {/* <div className='w-full h-full bg-black/10 absolute left-0 top-0'></div> */}
         <Image
           src={urlFor(activities.coverPhoto)}
@@ -37,16 +37,17 @@ export default async function page({
           height={800}
           className='aspect-6/3 lg:aspect-5/2 object-cover object-center overflow-hidden w-full '
         />
+        <div className='pt-4 px-4 lg:px-8 lg:pt-8'>
+          <BackButton />
+        </div>
         <div className=''>
-          <h1 className='text-3xl lg:text-7xl body-font text-center mt-4 capitalize text-zinc-500'>
+          <h1 className='text-2xl lg:text-7xl body-font text-center capitalize text-zinc-500'>
             {activities.title}
           </h1>
         </div>
       </div>
 
-      <div className='px-4 lg:px-0 min-h-screen md:w-[80vw] mx-auto'>
-        <BackButton />
-      </div>
+      <div className='px-4 lg:px-0 min-h-screen md:w-[80vw] mx-auto'></div>
     </div>
   );
 }

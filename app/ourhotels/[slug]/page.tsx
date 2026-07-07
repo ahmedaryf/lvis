@@ -1,4 +1,5 @@
 import GalleryComponent from "@/app/components/GalleryComponent";
+import BackButton from "@/app/components/GoBack";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
@@ -48,7 +49,10 @@ export default async function SlugPage({
           </h1>
         </div>
       </div>
-      <div className='w-full md:w-[80vw] mx-auto  mb-12 md:mb-24 mt-12 lg:mt-24'>
+      <div className='pt-4 px-4 lg:pt-8 lg:px-8'>
+        <BackButton />
+      </div>
+      <div className='w-full md:w-[80vw] mx-auto  mb-12 md:mb-24 mt-6 lg:mt-12'>
         <div className='mb-12 lg:mb-24 px-6 lg:px-0'>
           <div className='prose custom-prose body-font'>
             {properties.propertyDetails && (

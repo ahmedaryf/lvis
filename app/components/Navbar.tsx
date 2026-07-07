@@ -13,10 +13,10 @@ const navLinks = [
     url: "/",
   },
 
-  {
-    name: "Our Hotels",
-    url: "/ourhotels",
-  },
+  // {
+  //   name: "Our Hotels",
+  //   url: "/ourhotels",
+  // },
 
   {
     name: "The Destination",
@@ -107,7 +107,7 @@ export default function Navbar() {
             w-screen z-50 fixed`}>
           <div
             className={`group flex justify-between w-full items-center bg-transparent duration-500 md:hover:bg-white/80 md:hover:text-zinc-500 md:dark:hover:bg-black  ${
-              scrollPosition < 200 && path == "/"
+              scrollPosition < 200
                 ? "md:bg-transparent text-white"
                 : "md:bg-white/80 dark:md:bg-black text-zinc-500"
             } md:px-12 py-4`}>
