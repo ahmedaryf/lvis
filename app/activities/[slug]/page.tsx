@@ -27,18 +27,24 @@ export default async function page({
   const activities = await getActivities(slug);
 
   return (
-    <div className=' w-full '>
-      <Image
-        src={urlFor(activities.coverPhoto)}
-        alt='Image'
-        width={800}
-        height={600}
-        className='w-full aspect-6/3 object-cover object-top'
-      />
-      <div className='min-h-screen md:w-[80vw] mx-auto  mb-12 md:mb-24'>
-        <h1 className='text-5xl text-center pt-24 capitalize text-zinc-500'>
-          {activities.title}
-        </h1>
+    <div className='w-full mb-12 md:mb-24'>
+      <div className='relative'>
+        {/* <div className='w-full h-full bg-black/10 absolute left-0 top-0'></div> */}
+        <Image
+          src={urlFor(activities.coverPhoto)}
+          alt='Image'
+          width={1000}
+          height={800}
+          className='aspect-6/3 lg:aspect-5/2 object-cover object-center overflow-hidden w-full '
+        />
+        <div className=''>
+          <h1 className='text-3xl lg:text-7xl body-font text-center mt-4 capitalize text-zinc-500'>
+            {activities.title}
+          </h1>
+        </div>
+      </div>
+
+      <div className='px-4 lg:px-0 min-h-screen md:w-[80vw] mx-auto'>
         <BackButton />
       </div>
     </div>

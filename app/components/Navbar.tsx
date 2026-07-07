@@ -145,11 +145,11 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-            <Link
+            {/* <Link
               className={`border  text-center  md:w-32 px-4 text-white  rounded-md body-font uppercase text-xs py-1 bg-amber-800/80 lg:hover:bg-amber-800 `}
               href={"/"}>
               Book now
-            </Link>
+            </Link> */}
             {/* mobile */}
             <div className='block md:hidden me-2'>
               {isOpen ? (
