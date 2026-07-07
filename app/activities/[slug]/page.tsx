@@ -4,7 +4,7 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import React from "react";
 
-export async function getActivities(slug: string) {
+async function getActivities(slug: string) {
   const query = `*[_type == "activities" && slug.current == $slug][0]{
     title,
     coverPhoto
