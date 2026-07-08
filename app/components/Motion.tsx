@@ -15,7 +15,7 @@ export default function Motion({ children }: PropType) {
         ref={ref}
         style={{
           opacity: isInView ? 1 : 0.2,
-
+          transform: isInView ? "translateY(0px)" : "translateY(20px)",
           transition: "opacity 2s, transform 1s",
         }}>
         {children}
