@@ -9,7 +9,7 @@ import PropertiesHomePage from "./components/PropertiesHomePage";
 import HeroSection from "./components/HeroSection";
 import Activities from "./components/Activities";
 
-import DiningComponent from "./components/DiningComponent";
+import Dinning from "./components/Dinning";
 
 export const revalidate = 60;
 
@@ -62,7 +62,7 @@ export default async function page() {
           <Activities />
         </div>
         <div>
-          <DiningComponent />
+          <Dinning />
         </div>
       </div>
     </div>

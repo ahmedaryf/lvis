@@ -4,7 +4,8 @@ import { accordions } from "../schemas/accordions";
 import { properties } from "../schemas/properties";
 import { aboutus } from "../schemas/aboutus";
 import { activities } from "../schemas/activities";
+import { dinning } from "../schemas/dinning";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [hero, aboutus, accordions, properties, activities],
+  types: [hero, aboutus, accordions, properties, activities, dinning],
 };
