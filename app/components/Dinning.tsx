@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import Motion from "./Motion";
 
-async function getActivityData() {
+async function getDinningData() {
   const query = `*[_type == "dinning"]{
     title,
     coverPhoto,
@@ -16,15 +16,15 @@ async function getActivityData() {
 }
 
 export default async function Dinning() {
-  const activities = await getActivityData();
+  const dinnings = await getDinningData();
   return (
     <div className='px-4 min-h-screen'>
       <h3 className='text-xl md:text-3xl text-zinc-400 text-center mb-4 lg:mb-8 uppercase body-font'>
         The Flavors of LVIS
       </h3>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-        {activities &&
-          activities.map((dinning: any, index: number) => (
+        {dinnings &&
+          dinnings.map((dinning: any, index: number) => (
             <Motion key={index}>
               <Link href={`/dinning/${dinning.slug.current}`}>
                 <div className=' shadow rounded-md pb-1'>
