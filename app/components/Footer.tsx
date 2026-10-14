@@ -1,3 +1,4 @@
+import { client } from "@/sanity/lib/client";
 import { MailIcon } from "lucide-react";
 import Link from "next/link";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
@@ -6,8 +7,19 @@ import { FaPhone } from "react-icons/fa6";
 // import { ThemeToggler } from "./ThemeToggler";
 // import { IoIosMail } from "react-icons/io";
 
-export default function Footer() {
+async function getContacts() {
+  const query = `*[_type == "contacts"]{
+    contactType,
+    contact
+  }`;
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  return data;
+}
+
+export default async function Footer() {
   const year = new Date().getFullYear();
+
+  const contacts = await getContacts();
 
   return (
     <footer className='min-h-[60vh] w-screen bg-zinc-50 duration-500 dark:border-t border-white  flex flex-col justify-between py-6 '>
@@ -28,13 +40,17 @@ export default function Footer() {
             <div className='flex gap-2 items-center mb-2'>
               <FaPhone size={16} />
               <Link href={"tel:"}>
-                <p className='text-xs md:text-sm'>Phone: +960 </p>
+                <p className='text-xs md:text-sm'>
+                  Phone: {contacts[0].contact}
+                </p>
               </Link>
             </div>
             <div className='flex gap-2 items-center mb-2'>
               <MailIcon size={16} />
               <Link href={"tel:"}>
-                <p className='text-xs md:text-sm'>Email:</p>
+                <p className='text-xs md:text-sm'>
+                  Email: {contacts[1].contact}
+                </p>
               </Link>
             </div>
           </div>
