@@ -10,6 +10,9 @@ import HeroSection from "./components/HeroSection";
 import Activities from "./components/Activities";
 
 import Dinning from "./components/Dinning";
+import Location from "./components/LocationComponent";
+import LocationComponent from "./components/LocationComponent";
+import HanifarubayComponent from "./components/Hanifarubay";
 
 export const revalidate = 60;
 
@@ -58,11 +61,17 @@ export default async function page() {
         <div className=''>
           <PropertiesHomePage data={properties} />
         </div>
-        <div>
+        <div className=' mb-24'>
           <Activities />
         </div>
-        <div>
+        <div className=' mb-24'>
           <Dinning />
+        </div>
+        <div className=' mb-24'>
+          <HanifarubayComponent />
+        </div>
+        <div className=' mb-24'>
+          <LocationComponent />
         </div>
       </div>
     </div>

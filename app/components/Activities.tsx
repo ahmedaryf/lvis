@@ -18,7 +18,7 @@ async function getActivityData() {
 export default async function Activities() {
   const activities = await getActivityData();
   return (
-    <div className='px-4 min-h-screen'>
+    <div className='px-4'>
       <h3 className='text-xl md:text-3xl text-zinc-400 text-center mb-4 lg:mb-8 uppercase body-font'>
         Aquatic Wonders
       </h3>
