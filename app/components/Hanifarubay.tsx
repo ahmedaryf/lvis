@@ -29,8 +29,8 @@ export default async function HanifarubayComponent() {
       <div className=' w-full'>
         <Image
           src={urlFor(hanifarubay[0].coverPhoto)}
-          width={800}
-          height={600}
+          width={1000}
+          height={800}
           alt='Cover Photo'
           className='aspect-video object-cover mx-auto'
         />
