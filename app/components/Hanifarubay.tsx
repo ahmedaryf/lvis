@@ -32,7 +32,7 @@ export default async function HanifarubayComponent() {
           width={1000}
           height={800}
           alt='Cover Photo'
-          className='aspect-video object-cover mx-auto'
+          className='aspect-4/3 md:aspect-video object-cover mx-auto'
         />
       </div>
       <div className='prose custom-prose body-font mt-4 text-zinc-500 md:px-24'>

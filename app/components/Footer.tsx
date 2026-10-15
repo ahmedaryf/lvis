@@ -105,7 +105,7 @@ export default async function Footer() {
       <div className='text-center self-center '>
         <div className=''>
           {/* <ThemeToggler /> */}
-          <h5 className='text-sm'>© {year} LVIS Hotels</h5>
+          <h5 className='text-sm body-font'>© {year} LVIS Hotels</h5>
         </div>
 
         <h5 className='text-xs text-gray-300 dark:text-gray-600 mt-2'>
