@@ -72,13 +72,13 @@ export default async function page() {
         <div className=''>
           <PropertiesHomePage data={properties} />
         </div>
-        <div className=' mb-24'>
+        <div className=' mb-24 md:mb-32'>
           <Activities />
         </div>
-        <div className=' mb-24'>
+        <div className=' mb-24 md:mb-32'>
           <Dinning />
         </div>
-        <div className=' mb-24'>
+        <div className=' mb-24 md:mb-32'>
           <HanifarubayComponent />
         </div>
         <div className=' mb-24'>
