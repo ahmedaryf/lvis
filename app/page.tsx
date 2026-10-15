@@ -13,6 +13,7 @@ import Dinning from "./components/Dinning";
 import Location from "./components/LocationComponent";
 import LocationComponent from "./components/LocationComponent";
 import HanifarubayComponent from "./components/Hanifarubay";
+import Accordions from "./components/Accordions";
 
 export const revalidate = 60;
 
@@ -44,11 +45,21 @@ async function getAboutusData() {
   return data;
 }
 
+async function getFaqData() {
+  const query = `*[_type == "accordions"]{
+    id,
+    question, answer
+  }`;
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  return data;
+}
+
 export default async function page() {
   // const heroData = await getHeroData();
   const properties = await getProperties();
   const heroData = await getHeroData();
   const aboutus = await getAboutusData();
+  const faqData = await getFaqData();
 
   return (
     <div>
@@ -72,6 +83,9 @@ export default async function page() {
         </div>
         <div className=' mb-24'>
           <LocationComponent />
+        </div>
+        <div>
+          <Accordions data={faqData} />
         </div>
       </div>
     </div>

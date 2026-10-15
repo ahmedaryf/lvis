@@ -16,10 +16,21 @@ async function getContacts() {
   return data;
 }
 
+async function getAddress() {
+  const query = `*[_type == "address"]{
+    propertyAddress,
+    city,
+    country,
+    postcode
+  }`;
+  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+  return data;
+}
+
 export default async function Footer() {
   const year = new Date().getFullYear();
-
   const contacts = await getContacts();
+  const addressData = await getAddress();
 
   return (
     <footer className='min-h-[60vh] w-screen bg-zinc-50 duration-500 dark:border-t border-white  flex flex-col justify-between py-6 '>
@@ -33,14 +44,14 @@ export default async function Footer() {
           </Link>
         </div>
         <div className='mt-12 md:mt-0'>
-          <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
+          <h1 className='text-zinc-600 text-base md:text-xl body-font mb-2 border-b-2 border-b-zinc-200 text-center '>
             Contact us
           </h1>
-          <div className='flex flex-col gap-2'>
+          <div className='flex flex-col items-center md:items-start gap-1'>
             <div className='flex gap-2 items-center mb-2'>
               <FaPhone size={16} />
               <Link href={"tel:"}>
-                <p className='text-xs md:text-sm'>
+                <p className='text-zinc-600 text-sm md:text-base body-font'>
                   Phone: {contacts[0].contact}
                 </p>
               </Link>
@@ -48,7 +59,7 @@ export default async function Footer() {
             <div className='flex gap-2 items-center mb-2'>
               <MailIcon size={16} />
               <Link href={"tel:"}>
-                <p className='text-xs md:text-sm'>
+                <p className='text-zinc-600 text-sm md:text-base body-font'>
                   Email: {contacts[1].contact}
                 </p>
               </Link>
@@ -66,10 +77,29 @@ export default async function Footer() {
         </div>
 
         <div className='mt-12 md:mt-0 mb-24 md:mb-0'>
-          <h1 className='text-xl font-bold mb-2 md:mb-4 tracking-wider'>
+          <h1 className='text-zinc-600 text-base md:text-xl body-font mb-2 border-b-2 border-b-zinc-200  text-center md:text-start'>
             Address
           </h1>
-          <div></div>
+          <div className=''>
+            {addressData.map((address: any, index: number) => (
+              <div
+                key={index}
+                className='flex flex-col gap-0 items-center md:items-start'>
+                <p className='text-zinc-600 text-sm md:text-base body-font'>
+                  {address.propertyAddress}
+                </p>
+                <p className='text-zinc-500 text-sm md:text-base body-font'>
+                  {address.city}
+                </p>
+                <p className='text-zinc-500 text-sm md:text-base body-font'>
+                  {address.country}
+                </p>
+                <p className='text-zinc-500 text-sm md:text-base body-font'>
+                  {address.postcode}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       <div className='text-center self-center '>
