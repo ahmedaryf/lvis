@@ -46,8 +46,8 @@ export default function InquiryForm() {
 
   return (
     <div className=''>
-      <h5 className='text-xl md:text-3xl text-zinc-400 text-center  uppercase body-font mb-2 md:mb-6'>
-        Inquery Form
+      <h5 className='text-xl md:text-2xl text-zinc-400 text-center  uppercase body-font mb-2 md:mb-6'>
+        Inquiry Form
       </h5>
       <div className=' '>
         {success && <div className='text-green-500'>{success}</div>}
@@ -60,7 +60,7 @@ export default function InquiryForm() {
               {...register("guestName")}
               type='text'
               placeholder=''
-              className='border px-2 body-font'
+              className='border px-2 body-font py-1 rounded'
             />
             {errors.guestName && (
               <div className='text-red-300 body-font'>
@@ -72,7 +72,7 @@ export default function InquiryForm() {
             <label className='text-zinc-500 body-font'>Room Type</label>
             <select
               {...register("roomType")}
-              className='border px-2 text-zinc-400'>
+              className='border px-2 text-zinc-400 py-1 rounded'>
               <option value=''>-Select-</option>
               <option value='standard'>Standard</option>
               <option value='deluxe'>Deluxe</option>
@@ -90,7 +90,7 @@ export default function InquiryForm() {
               {...register("checkIn")}
               type='date'
               placeholder='Checkin Date'
-              className='border px-2 text-zinc-400'
+              className='border px-2 text-zinc-400 py-1 rounded'
             />
             {errors.checkIn && (
               <div className='text-red-300 body-font'>
@@ -104,7 +104,7 @@ export default function InquiryForm() {
               {...register("checkOut")}
               type='date'
               placeholder='Checkout Date'
-              className='border px-2 text-zinc-400'
+              className='border px-2 text-zinc-400 py-1 rounded'
             />
             {errors.checkOut && (
               <div className='text-red-300 body-font'>
@@ -114,7 +114,7 @@ export default function InquiryForm() {
           </div>
           <button
             disabled={isSubmitting}
-            className='bg-zinc-400 text-white py-1 body-font cursor-pointer'
+            className='bg-zinc-400 hover:bg-zinc-500 text-white py-1 body-font cursor-pointer rounded'
             type='submit'>
             {isSubmitting ? "Loading..." : "Send"}
           </button>

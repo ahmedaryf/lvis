@@ -17,7 +17,7 @@ export function DialogComponent({ children }: any) {
         <DialogTrigger asChild>
           <button
             type='button'
-            className='border px-4 py-1 body-font rounded-md uppercase hover:bg-zinc-100 text-zinc-500 cursor-pointer'>
+            className=' px-4 py-1 body-font rounded-md  bg-zinc-400 hover:bg-zinc-500 text-white cursor-pointer'>
             Inquiry Form
           </button>
         </DialogTrigger>

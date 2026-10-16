@@ -6,8 +6,6 @@ import { MdClose } from "react-icons/md";
 import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { DialogComponent } from "./DialogComponent";
-import InquiryForm from "./InquiryForm";
 
 const navLinks = [
   {
@@ -145,9 +143,6 @@ export default function Navbar() {
                     }
                   </div>
                 ))}
-                <DialogComponent>
-                  <InquiryForm />
-                </DialogComponent>
               </div>
             </div>
             {/* <Link
