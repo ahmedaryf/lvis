@@ -8,13 +8,10 @@ import MainTitle from "./components/MainTitle";
 import PropertiesHomePage from "./components/PropertiesHomePage";
 import HeroSection from "./components/HeroSection";
 import Activities from "./components/Activities";
-
 import Dinning from "./components/Dinning";
-import Location from "./components/LocationComponent";
 import LocationComponent from "./components/LocationComponent";
 import HanifarubayComponent from "./components/Hanifarubay";
 import Accordions from "./components/Accordions";
-import InquiryForm from "@/components/InquiryForm";
 
 export const revalidate = 60;
 
@@ -85,9 +82,7 @@ export default async function page() {
         <div className=' mb-24'>
           <LocationComponent />
         </div>
-        <div>
-          <InquiryForm />
-        </div>
+
         <div>
           <Accordions data={faqData} />
         </div>

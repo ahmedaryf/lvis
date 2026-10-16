@@ -53,7 +53,7 @@ export default function InquiryForm() {
         {success && <div className='text-green-500'>{success}</div>}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className='flex flex-col gap-6 w-[20vw] mx-auto'>
+          className='flex flex-col gap-6 w-full mx-auto'>
           <div className='flex flex-col gap-1'>
             <label className='text-zinc-500 body-font'>Guest Name </label>
             <input
@@ -63,7 +63,9 @@ export default function InquiryForm() {
               className='border px-2 body-font'
             />
             {errors.guestName && (
-              <div className='text-red-300'>{errors.guestName.message}</div>
+              <div className='text-red-300 body-font'>
+                {errors.guestName.message}
+              </div>
             )}
           </div>
           <div className='flex flex-col gap-1'>
@@ -77,7 +79,9 @@ export default function InquiryForm() {
               <option value='family'>Family</option>
             </select>
             {errors.roomType && (
-              <div className='text-red-300'>{errors.roomType.message}</div>
+              <div className='text-red-300 body-font'>
+                {errors.roomType.message}
+              </div>
             )}
           </div>
           <div className='flex flex-col gap-1'>
@@ -89,7 +93,9 @@ export default function InquiryForm() {
               className='border px-2 text-zinc-400'
             />
             {errors.checkIn && (
-              <div className='text-red-300'>{errors.checkIn.message}</div>
+              <div className='text-red-300 body-font'>
+                {errors.checkIn.message}
+              </div>
             )}
           </div>
           <div className='flex flex-col gap-1'>
@@ -101,14 +107,16 @@ export default function InquiryForm() {
               className='border px-2 text-zinc-400'
             />
             {errors.checkOut && (
-              <div className='text-red-300'>{errors.checkOut.message}</div>
+              <div className='text-red-300 body-font'>
+                {errors.checkOut.message}
+              </div>
             )}
           </div>
           <button
             disabled={isSubmitting}
-            className='bg-zinc-300 text-zinc-600 body-font cursor-pointer'
+            className='bg-zinc-400 text-white py-1 body-font cursor-pointer'
             type='submit'>
-            {isSubmitting ? "Loading..." : "Submit"}
+            {isSubmitting ? "Loading..." : "Send"}
           </button>
         </form>
       </div>
