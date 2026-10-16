@@ -14,6 +14,7 @@ import Location from "./components/LocationComponent";
 import LocationComponent from "./components/LocationComponent";
 import HanifarubayComponent from "./components/Hanifarubay";
 import Accordions from "./components/Accordions";
+import InquiryForm from "@/components/InquiryForm";
 
 export const revalidate = 60;
 
@@ -83,6 +84,9 @@ export default async function page() {
         </div>
         <div className=' mb-24'>
           <LocationComponent />
+        </div>
+        <div>
+          <InquiryForm />
         </div>
         <div>
           <Accordions data={faqData} />
