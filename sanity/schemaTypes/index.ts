@@ -9,6 +9,7 @@ import { location } from "../schemas/location";
 import { hanifarubay } from "../schemas/hanifarubay";
 import { contacts } from "../schemas/contacts";
 import { address } from "../schemas/address";
+import { promotions } from "../schemas/promotiions";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,5 +23,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     location,
     contacts,
     address,
+    promotions,
   ],
 };

@@ -19,8 +19,8 @@ const navLinks = [
   // },
 
   {
-    name: "The Destination",
-    url: "/thedestination",
+    name: "Promotions",
+    url: "/promotions",
   },
 ];
 

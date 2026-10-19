@@ -26,7 +26,9 @@ export default async function Dinning() {
         {dinnings &&
           dinnings.map((dinning: any, index: number) => (
             <Motion key={index}>
-              <Link href={`/dinning/${dinning.slug.current}`}>
+              <Link
+                href={`/dinning/${dinning.slug.current}`}
+                className='hover:opacity-90'>
                 <div className=' shadow rounded-md pb-1'>
                   {dinning.coverPhoto && (
                     <Image

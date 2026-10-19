@@ -26,7 +26,9 @@ export default async function Activities() {
         {activities &&
           activities.map((activity: any, index: number) => (
             <Motion key={index}>
-              <Link href={`/activities/${activity.slug.current}`}>
+              <Link
+                href={`/activities/${activity.slug.current}`}
+                className='hover:opacity-90'>
                 <div className=' shadow rounded-md pb-1'>
                   {activity.coverPhoto && (
                     <Image
