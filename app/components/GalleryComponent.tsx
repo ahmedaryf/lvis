@@ -35,6 +35,7 @@ export default function GalleryComponent({ data }: { data: any }) {
   const slides =
     data?.map((img: any) => ({
       src: urlFor(img.gallaryImages),
+      title: img.imageTitle,
     })) ?? [];
 
   return (
@@ -59,6 +60,11 @@ export default function GalleryComponent({ data }: { data: any }) {
                       alt={`Image ${i + 1}`}
                       className='w-full aspect-[4/3] object-cover rounded-md hover:opacity-90 transition'
                     />
+                    <div>
+                      <p className='text-sm text-center body-font text-cyan-600'>
+                        {img.imageTitle}
+                      </p>
+                    </div>
                   </Motion>
                 </div>
               </div>

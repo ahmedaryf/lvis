@@ -1,3 +1,4 @@
+import ActivityItem from "@/app/components/ActivityItem";
 import BackButton from "@/app/components/GoBack";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -7,7 +8,16 @@ import React from "react";
 async function getActivities(slug: string) {
   const query = `*[_type == "activities" && slug.current == $slug][0]{
     title,
-    coverPhoto
+    coverPhoto,
+    items[]{
+      itemName,
+      itemPhoto,
+      itemDescription,
+      itemDuration,
+      itemMinimumPax,
+      itemPrice
+    }
+    
     }`;
   const data = await client.fetch(
     query,
@@ -27,7 +37,7 @@ export default async function page({
   const activities = await getActivities(slug);
 
   return (
-    <div className='w-full mb-12 md:mb-24'>
+    <div className='w-full mb-12 md:mb-24 bg-black/5'>
       <div className=''>
         {/* <div className='w-full h-full bg-black/10 absolute left-0 top-0'></div> */}
         <Image
@@ -40,10 +50,13 @@ export default async function page({
         <div className='pt-4 px-4 lg:px-8 lg:pt-8'>
           <BackButton />
         </div>
-        <div className=''>
-          <h1 className='text-2xl lg:text-7xl body-font text-center capitalize text-zinc-500'>
+        <div className=' px-8 '>
+          <h1 className='text-2xl lg:text-7xl body-font text-center capitalize text-zinc-400'>
             {activities.title}
           </h1>
+          <div className='mt-4 md:mt-8'>
+            <ActivityItem data={activities.items} />
+          </div>
         </div>
       </div>
 

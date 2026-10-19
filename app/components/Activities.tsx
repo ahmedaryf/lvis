@@ -39,11 +39,15 @@ export default async function Activities() {
                       className='aspect-4/3 object-cover rounded-md'
                     />
                   )}
-                  {activity.title && (
-                    <h6 className='text-sm mt-2 md:text-base text-zinc-400 text-center mb-4 uppercase body-font'>
-                      {activity.title}
-                    </h6>
-                  )}
+                  <div className=''>
+                    {activity.title && (
+                      <div className='bg-cyan-500 hover:bg-cyan-400 rounded'>
+                        <h6 className='text-sm mt-2 md:text-base text-white text-center mb-4 uppercase body-font'>
+                          {activity.title}
+                        </h6>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </Link>
             </Motion>

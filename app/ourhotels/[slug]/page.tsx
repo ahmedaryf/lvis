@@ -46,7 +46,7 @@ export default async function SlugPage({
           className='w-full h-full aspect-4/3 md:aspect-video object-cover'
         />
         <div className=' absolute top-2/3 lg:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full'>
-          <h1 className=' text-3xl md:text-8xl text-center text-white mb-4 uppercase body-font font-semibold'>
+          <h1 className=' text-4xl md:text-8xl text-center text-white/30 mb-4 body-font '>
             {properties.propertyName}
           </h1>
         </div>
@@ -68,7 +68,7 @@ export default async function SlugPage({
           </div>
         </div>
 
-        <div className='min-h-screen px-6 lg:px-0'>
+        <div className='px-6 lg:px-0'>
           <GalleryComponent data={properties.images} />
         </div>
       </div>

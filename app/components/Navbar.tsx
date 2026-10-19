@@ -106,10 +106,10 @@ export default function Navbar() {
           className={`duration-500 px-2 py-2  md:px-0 
             w-screen z-50 fixed`}>
           <div
-            className={`group flex justify-between w-full items-center bg-transparent duration-500 md:hover:bg-white/80 md:hover:text-zinc-500 md:dark:hover:bg-black  ${
+            className={`group flex justify-between w-full items-center bg-transparent duration-500 md:hover:bg-white/80 md:hover:text-cyan-600 md:dark:hover:bg-black  ${
               scrollPosition < 200
                 ? "md:bg-transparent text-white"
-                : "md:bg-white/80 dark:md:bg-black text-zinc-500"
+                : "md:bg-white/80 dark:md:bg-black text-cyan-600"
             } md:px-12 py-4`}>
             <div className=''>
               <Link href={"/"}>

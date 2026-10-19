@@ -16,7 +16,7 @@ export function DialogComponent({ children }: any) {
         <DialogTrigger asChild>
           <button
             type='button'
-            className=' px-4 py-1 body-font rounded-md  bg-zinc-400 hover:bg-zinc-500 text-white cursor-pointer'>
+            className=' px-4 py-1 body-font rounded-md  bg-cyan-500 hover:bg-cyan-600 text-white cursor-pointer'>
             Inquiry Form
           </button>
         </DialogTrigger>
@@ -27,7 +27,7 @@ export function DialogComponent({ children }: any) {
           </DialogHeader>
           <div>{children}</div>
           <DialogFooter>
-            <DialogClose className='body-font text-zinc-500 cursor-pointer mt-4'>
+            <DialogClose className='body-font text-red-600 cursor-pointer mt-4'>
               Cancel
             </DialogClose>
           </DialogFooter>
