@@ -13,6 +13,7 @@ import LocationComponent from "./components/LocationComponent";
 import HanifarubayComponent from "./components/Hanifarubay";
 import Accordions from "./components/Accordions";
 import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 
 export const revalidate = 60;
 
@@ -87,6 +88,9 @@ export default async function page() {
         <div>
           <Accordions data={faqData} />
         </div>
+      </div>
+      <div>
+        <WhatsAppWidget />
       </div>
     </div>
   );
