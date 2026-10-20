@@ -108,7 +108,10 @@ export default function PropertiesHomePage({ data }: { data: any }) {
   return (
     <div className='px-4 md:px-0 py-6 md:p-24 ' ref={mainRef}>
       {data.slice(0, 3).map((item: any, index: number) => (
-        <Link key={index} href={`./ourhotels/${item.slug.current}`}>
+        <Link
+          key={index}
+          href={`./ourhotels/${item.slug.current}`}
+          className='hover:opacity-90'>
           <div
             className={`property-item flex flex-col md:flex-row gap-6 md:gap-12 justify-center items-center mb-24 md:mb-52 ${
               index === 1 ? "md:flex-row-reverse" : ""

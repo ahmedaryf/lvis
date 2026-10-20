@@ -1,0 +1,48 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaSquareWhatsapp } from "react-icons/fa6";
+
+export default function WhatsAppWidget() {
+  const [open, setOpen] = useState(false);
+
+  const phoneNumber = "+960779507"; // ← Change to your number (international format, no +)
+  const message = "";
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  return (
+    <>
+      <div
+        className='fixed bottom-6 right-6 z-50 cursor-pointer'
+        onClick={() => setOpen(!open)}>
+        <div className='text-5xl text-cyan-500'>
+          <FaSquareWhatsapp />
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            exit={{ opacity: 0, y: 0 }}
+            className='fixed bottom-20 right-6 z-50 w-64 bg-white shadow-lg rounded-lg p-4 text-sm'>
+            <p className='mb-2 body-font text-zinc-500'>
+              Chat with us on WhatsApp
+            </p>
+            <Link
+              href={whatsappLink}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='block w-full text-center bg-cyan-500 text-white py-2 px-4 rounded hover:bg-cyan-600/80'>
+              Start Chat
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
