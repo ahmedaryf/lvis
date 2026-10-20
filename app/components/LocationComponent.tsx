@@ -46,7 +46,7 @@ export default async function LocationComponent() {
       <div className='mt-4 md:mt-8 w-full flex items-center justify-center'>
         <Link
           href={"/dharavandhoo"}
-          className='text-sm md:text-base body-font border-2 border-zinc-200 hover:bg-zinc-400 px-6 md:px-8  rounded-xl text-zinc-400 hover:text-white'>
+          className='text-sm md:text-base body-font border border-cyan-500 hover:bg-cyan-500 px-6 md:px-8  rounded-xl text-cyan-500 hover:text-white'>
           Explore Dharavandhoo
         </Link>
       </div>

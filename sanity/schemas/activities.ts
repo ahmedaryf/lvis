@@ -25,6 +25,11 @@ export const activities = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: "shortDescription",
+      title: "Short Description",
+      type: "text",
+    }),
+    defineField({
       name: "items",
       title: "Items",
       type: "array",

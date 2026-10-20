@@ -56,7 +56,7 @@ export default function MainTitle({ text }: { text: string }) {
 
   return (
     <div ref={containerRef} className='flex flex-col h-[50vh] lg:h-[70vh]'>
-      <h1 className='text-4xl md:text-8xl text-zinc-400 font-semibold text-center mt-6 md:mt-24 pt-12 splitText uppercase tracking-wider '>
+      <h1 className='text-4xl md:text-8xl text-cyan-600/70 font-semibold text-center mt-6 md:mt-24 pt-12 splitText uppercase tracking-wider '>
         LVIS Hotels
       </h1>
       <h6 className='text-base md:text-3xl text-zinc-300  uppercase splitText text-center body-font'>

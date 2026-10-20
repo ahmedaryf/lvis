@@ -6,23 +6,24 @@ import MainTitle from "./components/MainTitle";
 // import SmoothScroll from "./components/SmoothScroll";
 // import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
 import PropertiesHomePage from "./components/PropertiesHomePage";
-import HeroSection from "./components/HeroSection";
+// import HeroSection from "./components/HeroSection";
 import Activities from "./components/Activities";
 import Dinning from "./components/Dinning";
 import LocationComponent from "./components/LocationComponent";
 import HanifarubayComponent from "./components/Hanifarubay";
 import Accordions from "./components/Accordions";
+import OptimizedVideoComponent from "./components/OptimizedVideoComponent";
 
 export const revalidate = 60;
 
-async function getHeroData() {
-  const query = `*[_type == "hero"] | order(id asc){
-  image,
-  title
-  }`;
-  const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
-  return data;
-}
+// async function getHeroData() {
+//   const query = `*[_type == "hero"] | order(id asc){
+//   image,
+//   title
+//   }`;
+//   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
+//   return data;
+// }
 
 async function getProperties() {
   const query = `*[_type == "properties"] | order(propertyName asc){
@@ -55,15 +56,15 @@ async function getFaqData() {
 export default async function page() {
   // const heroData = await getHeroData();
   const properties = await getProperties();
-  const heroData = await getHeroData();
+  // const heroData = await getHeroData();
   const aboutus = await getAboutusData();
   const faqData = await getFaqData();
 
   return (
     <div>
-      <HeroSection data={heroData} />
+      {/* <HeroSection data={heroData} /> */}
       {/* <HeroVideoComponent /> */}
-      {/* <OptimizedVideoComponent /> */}
+      <OptimizedVideoComponent />
 
       <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
         <MainTitle text={aboutus[0].intro} />

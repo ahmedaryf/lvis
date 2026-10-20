@@ -7,6 +7,8 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import "yet-another-react-lightbox/plugins/captions.css";
 import { urlFor } from "@/sanity/lib/image";
 import Motion from "./Motion";
 
@@ -36,6 +38,7 @@ export default function GalleryComponent({ data }: { data: any }) {
     data?.map((img: any) => ({
       src: urlFor(img.gallaryImages),
       title: img.imageTitle,
+      description: img.imageTitle,
     })) ?? [];
 
   return (
@@ -51,22 +54,22 @@ export default function GalleryComponent({ data }: { data: any }) {
                   setIndex(i);
                   setOpen(true);
                 }}>
-                <div>
-                  <Motion>
+                <Motion>
+                  <div className='bg-cyan-500/90 rounded-md'>
                     <Image
                       src={urlFor(img.gallaryImages)}
                       width={1000}
                       height={800}
                       alt={`Image ${i + 1}`}
-                      className='w-full aspect-[4/3] object-cover rounded-md hover:opacity-90 transition'
+                      className='w-full aspect-[4/3] object-cover rounded-t-md hover:opacity-90 transition'
                     />
                     <div>
-                      <p className='text-sm text-center body-font text-cyan-600'>
+                      <p className='text-sm text-center body-font text-white'>
                         {img.imageTitle}
                       </p>
                     </div>
-                  </Motion>
-                </div>
+                  </div>
+                </Motion>
               </div>
             );
           })}
@@ -77,7 +80,12 @@ export default function GalleryComponent({ data }: { data: any }) {
           close={() => setOpen(false)}
           index={index}
           slides={slides}
-          plugins={[Zoom, Thumbnails]}
+          plugins={[Zoom, Thumbnails, Captions]}
+          captions={{
+            descriptionTextAlign: "center",
+            descriptionMaxLines: 3,
+            showToggle: false,
+          }}
         />
       )}
       {/* <Lightbox
