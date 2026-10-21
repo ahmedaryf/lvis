@@ -8,7 +8,7 @@ import { FaSquareWhatsapp } from "react-icons/fa6";
 export default function WhatsAppWidget() {
   const [open, setOpen] = useState(false);
 
-  const phoneNumber = "+960779507"; // ← Change to your number (international format, no +)
+  const phoneNumber = "+9607795907"; // ← Change to your number (international format, no +)
   const message = "";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -18,7 +18,7 @@ export default function WhatsAppWidget() {
       <div
         className='fixed bottom-6 right-6 z-50 cursor-pointer'
         onClick={() => setOpen(!open)}>
-        <div className='text-5xl text-cyan-500'>
+        <div className='text-5xl text-green-500 hover:text-green-600'>
           <FaSquareWhatsapp />
         </div>
       </div>
@@ -37,7 +37,7 @@ export default function WhatsAppWidget() {
               href={whatsappLink}
               target='_blank'
               rel='noopener noreferrer'
-              className='block w-full text-center bg-cyan-500 text-white py-2 px-4 rounded hover:bg-cyan-600/80'>
+              className='block w-full text-center bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600/80'>
               Start Chat
             </Link>
           </motion.div>
