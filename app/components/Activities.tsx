@@ -31,7 +31,7 @@ export default async function Activities() {
               <Link
                 href={`/activities/${activity.slug.current}`}
                 className='hover:opacity-90'>
-                <div className=' shadow rounded-md pb-1'>
+                <div className=' shadow rounded-md pb-4'>
                   {activity.coverPhoto && (
                     <Image
                       src={urlFor(activity.coverPhoto)}
@@ -45,7 +45,7 @@ export default async function Activities() {
                   <div className='px-4 mb-4'>
                     {activity.title && (
                       <div className=''>
-                        <h6 className='text-sm mt-2 md:text-base text-cyan-500 font-semibold text-center mb-4 uppercase body-font'>
+                        <h6 className='text-base mt-2 md:text-base text-cyan-500 font-semibold text-center mb-4 uppercase body-font'>
                           {activity.title}
                         </h6>
                       </div>

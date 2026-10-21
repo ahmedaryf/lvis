@@ -30,6 +30,12 @@ export const activities = defineType({
       type: "text",
     }),
     defineField({
+      name: "DetailDescription",
+      title: "Detail Description",
+      type: "array",
+      of: [{ type: "block" }],
+    }),
+    defineField({
       name: "items",
       title: "Items",
       type: "array",
