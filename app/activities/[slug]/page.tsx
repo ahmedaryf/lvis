@@ -2,6 +2,7 @@ import ActivityItem from "@/app/components/ActivityItem";
 import BackButton from "@/app/components/GoBack";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import { PortableText } from "next-sanity";
 import Image from "next/image";
 import React from "react";
 
@@ -9,6 +10,7 @@ async function getActivities(slug: string) {
   const query = `*[_type == "activities" && slug.current == $slug][0]{
     title,
     coverPhoto,
+    DetailDescription,
     items[]{
       itemName,
       itemPhoto,
@@ -37,7 +39,7 @@ export default async function page({
   const activities = await getActivities(slug);
 
   return (
-    <div className='w-full mb-12 md:mb-24 bg-black/5'>
+    <div className='w-full mb-12 md:mb-24 bg-black/5  '>
       <div className=''>
         {/* <div className='w-full h-full bg-black/10 absolute left-0 top-0'></div> */}
         <Image
@@ -45,22 +47,23 @@ export default async function page({
           alt='Image'
           width={1000}
           height={800}
-          className='aspect-6/3 lg:aspect-5/2 object-cover object-center overflow-hidden w-full '
+          className='aspect-4/3 lg:aspect-5/2 object-cover object-center overflow-hidden w-full '
         />
         <div className='pt-4 px-4 lg:px-8 lg:pt-8'>
           <BackButton />
         </div>
-        <div className=' px-8 '>
+        <div className=' px-8 md:w-[80vw] mx-auto mt-6'>
           <h1 className='text-2xl lg:text-7xl body-font text-center capitalize text-zinc-400'>
             {activities.title}
           </h1>
-          <div className='mt-4 md:mt-8'>
+          <div className='prose custom-prose mt-6 md:mt-12 pb-6 md:pb-12 body-font text-zinc-600'>
+            <PortableText value={activities.DetailDescription} />
+          </div>
+          <div className='mt-4 md:mt-8 pb-6 md:pb-12'>
             <ActivityItem data={activities.items} />
           </div>
         </div>
       </div>
-
-      <div className='px-4 lg:px-0 min-h-screen md:w-[80vw] mx-auto'></div>
     </div>
   );
 }

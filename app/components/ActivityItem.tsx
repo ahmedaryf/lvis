@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ActivityItem({ data }: any) {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
       {data?.map((activity: any, index: number) => {
         return (
           <div key={index} className='bg-gray-50 rounded-xl shadow-2xl'>

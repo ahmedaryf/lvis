@@ -43,7 +43,7 @@ export default function GalleryComponent({ data }: { data: any }) {
 
   return (
     <div className='mt-6 lg:mt-12 pb-24'>
-      <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
+      <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4'>
         {data &&
           data.map((img: any, i: number) => {
             return (
@@ -55,7 +55,7 @@ export default function GalleryComponent({ data }: { data: any }) {
                   setOpen(true);
                 }}>
                 <Motion>
-                  <div className='bg-cyan-500/90 rounded-md'>
+                  <div className='bg-cyan-500/90 rounded-md pb-1'>
                     <Image
                       src={urlFor(img.gallaryImages)}
                       width={1000}
@@ -64,7 +64,7 @@ export default function GalleryComponent({ data }: { data: any }) {
                       className='w-full aspect-[4/3] object-cover rounded-t-md hover:opacity-90 transition'
                     />
                     <div>
-                      <p className='text-sm text-center body-font text-white'>
+                      <p className='text-xs md:text-sm text-center body-font text-white'>
                         {img.imageTitle}
                       </p>
                     </div>
