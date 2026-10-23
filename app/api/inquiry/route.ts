@@ -8,14 +8,34 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { roomType, checkIn, checkOut, guestName } = body;
+    const { property, guestEmail, pax, checkIn, checkOut, guestName, message } =
+      body;
+
+    const arrivalDate = new Date(checkIn).toLocaleDateString("en-uk", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+    const departueDate = new Date(checkOut).toLocaleDateString("en-uk", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
 
     await resend.emails.send({
       from: `${guestName} <noreply@resend.maldiveslocaltourism.com>`,
       to: "ahmd.areef@gmail.com",
-      bcc: "ahmedlisham@gmail.com",
+      // bcc: "ahmedlisham@gmail.com",
       subject: "Availability Request",
-      react: Inquery({ roomType, checkIn, checkOut }),
+      react: Inquery({
+        property,
+        guestName,
+        guestEmail,
+        pax,
+        checkIn: arrivalDate,
+        checkOut: departueDate,
+        message,
+      }),
     });
     return NextResponse.json({ success: true });
   } catch (error) {

@@ -25,7 +25,7 @@ export function DialogComponent({ children }: any) {
             <DialogTitle></DialogTitle>
             <DialogDescription></DialogDescription>
           </DialogHeader>
-          <div>{children}</div>
+          <div className=' overflow-y-auto max-h-[75vh] pb-12'>{children}</div>
           <DialogFooter>
             <DialogClose className='body-font text-red-600 cursor-pointer mt-4'>
               Cancel

@@ -5,10 +5,18 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
 const schema = z.object({
-  roomType: z.string().nonempty("Room Type is required"),
+  property: z.enum(["pool villa", "blancura", "village"], {
+    error: "Property Required",
+  }),
   checkIn: z.coerce.date({ error: "Checkin date is required" }),
   checkOut: z.coerce.date({ error: "Checkout date is required" }),
   guestName: z.string().nonempty("Name is required"),
+  guestEmail: z.string().nonempty("Email is required"),
+  pax: z.coerce
+    .number()
+    .int({ error: "Must be a whole number" })
+    .min(1, { error: "Pax Required" }),
+  message: z.string().optional(),
 });
 
 type formType = z.input<typeof schema>;
@@ -49,7 +57,7 @@ export default function InquiryForm() {
       <h5 className='text-xl md:text-2xl text-zinc-400 text-center  uppercase body-font mb-2 md:mb-6'>
         Inquiry Form
       </h5>
-      <div className=' '>
+      <div className=''>
         {success && <div className='text-green-500'>{success}</div>}
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -63,26 +71,56 @@ export default function InquiryForm() {
               className='border px-2 body-font py-1 rounded'
             />
             {errors.guestName && (
-              <div className='text-red-300 body-font'>
+              <div className='text-red-300 body-font text-sm'>
                 {errors.guestName.message}
               </div>
             )}
           </div>
           <div className='flex flex-col gap-1'>
-            <label className='text-zinc-500 body-font'>Room Type</label>
-            <select
-              {...register("roomType")}
-              className='border px-2 text-zinc-400 py-1 rounded'>
-              <option value=''>-Select-</option>
-              <option value='standard'>Standard</option>
-              <option value='deluxe'>Deluxe</option>
-              <option value='family'>Family</option>
-            </select>
-            {errors.roomType && (
-              <div className='text-red-300 body-font'>
-                {errors.roomType.message}
+            <label className='text-zinc-500 body-font'>Guest Email </label>
+            <input
+              {...register("guestEmail")}
+              type='email'
+              placeholder=''
+              className='border px-2 body-font py-1 rounded'
+            />
+            {errors.guestEmail && (
+              <div className='text-red-300 body-font text-sm'>
+                {errors.guestEmail.message}
               </div>
             )}
+          </div>
+          <div className='flex gap-4'>
+            <div className='flex flex-col gap-1 w-2/3'>
+              <label className='text-zinc-500 body-font'>Property</label>
+              <select
+                {...register("property")}
+                className='border px-2 text-zinc-400 py-1 rounded body-font'>
+                <option value=''>-Select-</option>
+                <option value='blancura'>Blancura</option>
+                <option value='pool villa'>Pool Villa</option>
+                <option value='village'>Village</option>
+              </select>
+              {errors.property && (
+                <div className='text-red-300 body-font text-sm'>
+                  {errors.property.message}
+                </div>
+              )}
+            </div>
+            <div className='flex flex-col gap-1 w-1/3'>
+              <label className='text-zinc-500 body-font'>Pax </label>
+              <input
+                {...register("pax")}
+                type='number'
+                placeholder=''
+                className='border px-2 body-font py-1 rounded'
+              />
+              {errors.pax && (
+                <div className='text-red-300 body-font text-sm'>
+                  {errors.pax.message}
+                </div>
+              )}
+            </div>
           </div>
           <div className='flex flex-col gap-1'>
             <label className='text-zinc-500 body-font'>Checkin Date</label>
@@ -93,7 +131,7 @@ export default function InquiryForm() {
               className='border px-2 text-zinc-400 py-1 rounded'
             />
             {errors.checkIn && (
-              <div className='text-red-300 body-font'>
+              <div className='text-red-300 body-font text-sm'>
                 {errors.checkIn.message}
               </div>
             )}
@@ -107,8 +145,23 @@ export default function InquiryForm() {
               className='border px-2 text-zinc-400 py-1 rounded'
             />
             {errors.checkOut && (
-              <div className='text-red-300 body-font'>
+              <div className='text-red-300 body-font text-sm'>
                 {errors.checkOut.message}
+              </div>
+            )}
+          </div>
+          <div className='flex flex-col gap-1'>
+            <label className='text-zinc-500 body-font'>Message</label>
+            <textarea
+              cols={10}
+              rows={5}
+              {...register("message")}
+              placeholder=''
+              className='border px-2 body-font py-1 rounded'
+            />
+            {errors.message && (
+              <div className='text-red-300 body-font text-sm'>
+                {errors.message.message}
               </div>
             )}
           </div>
