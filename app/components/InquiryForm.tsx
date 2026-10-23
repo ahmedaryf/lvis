@@ -63,7 +63,7 @@ export default function InquiryForm() {
           onSubmit={handleSubmit(onSubmit)}
           className='flex flex-col gap-6 w-full mx-auto'>
           <div className='flex flex-col gap-1'>
-            <label className='text-zinc-500 body-font'>Guest Name </label>
+            <label className='text-zinc-500 body-font'>Name </label>
             <input
               {...register("guestName")}
               type='text'
@@ -77,7 +77,7 @@ export default function InquiryForm() {
             )}
           </div>
           <div className='flex flex-col gap-1'>
-            <label className='text-zinc-500 body-font'>Guest Email </label>
+            <label className='text-zinc-500 body-font'>Email </label>
             <input
               {...register("guestEmail")}
               type='email'
@@ -97,9 +97,9 @@ export default function InquiryForm() {
                 {...register("property")}
                 className='border px-2 text-zinc-400 py-1 rounded body-font'>
                 <option value=''>-Select-</option>
-                <option value='blancura'>Blancura</option>
-                <option value='pool villa'>Pool Villa</option>
-                <option value='village'>Village</option>
+                <option value='LVIS blancura'>LVIS Blancura</option>
+                <option value='LVIS pool villa'>LVIS Pool Villa</option>
+                <option value='LVIS village'>LVIS Village</option>
               </select>
               {errors.property && (
                 <div className='text-red-300 body-font text-sm'>
