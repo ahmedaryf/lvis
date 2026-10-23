@@ -9,12 +9,24 @@ import {
 import * as React from "react";
 
 type InqueryProps = {
-  roomType: string;
+  property: string;
+  guestName: string;
+  guestEmail: string;
+  pax: number;
   checkIn: string;
   checkOut: string;
+  message: string;
 };
 
-export default function Inquery({ roomType, checkIn, checkOut }: InqueryProps) {
+export default function Inquery({
+  guestName,
+  guestEmail,
+  pax,
+  property,
+  checkIn,
+  checkOut,
+  message,
+}: InqueryProps) {
   return (
     <Html>
       <Head />
@@ -22,11 +34,15 @@ export default function Inquery({ roomType, checkIn, checkOut }: InqueryProps) {
         <Container>
           <Section>
             <Text style={{ fontSize: "20px", fontWeight: "bold" }}>
-              I would like to check availability for these dates!
+              Could you please check availability for these dates?
             </Text>
-            <Text>Room Type: {roomType}</Text>
+            <Text>Name: {guestName}</Text>
+            <Text>Email: {guestEmail}</Text>
+            <Text>Pax: {pax}</Text>
+            <Text>Property: {property}</Text>
             <Text>Checkin: {checkIn}</Text>
             <Text>Checkout: {checkOut}</Text>
+            <Text>Message: {message}</Text>
           </Section>
         </Container>
       </Body>
