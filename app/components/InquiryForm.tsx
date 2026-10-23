@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
 const schema = z.object({
-  property: z.enum(["pool villa", "blancura", "village"], {
+  property: z.enum(["LVIS pool villa", "LVIS blancura", "LVIS village"], {
     error: "Property Required",
   }),
   checkIn: z.coerce.date({ error: "Checkin date is required" }),
