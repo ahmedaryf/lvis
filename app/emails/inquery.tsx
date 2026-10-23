@@ -33,9 +33,9 @@ export default function Inquery({
       <Body>
         <Container>
           <Section>
-            <Text style={{ fontSize: "20px", fontWeight: "bold" }}>
+            {/* <Text style={{ fontSize: "16px", fontWeight: "bold" }}>
               Could you please check availability for these dates?
-            </Text>
+            </Text> */}
             <Text>Name: {guestName}</Text>
             <Text>Email: {guestEmail}</Text>
             <Text>Pax: {pax}</Text>

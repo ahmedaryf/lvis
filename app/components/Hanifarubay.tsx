@@ -2,6 +2,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 async function getHanifarubayData() {
@@ -39,6 +40,13 @@ export default async function HanifarubayComponent() {
         {hanifarubay[0].description && (
           <PortableText value={hanifarubay[0].description} />
         )}
+      </div>
+      <div className='mt-4 md:mt-8 w-full flex items-center justify-center'>
+        <Link
+          href={"/hanifarubay"}
+          className='text-sm md:text-base body-font border border-cyan-500 hover:bg-cyan-500 px-6 md:px-8  rounded-xl text-cyan-500 hover:text-white'>
+          Learn more
+        </Link>
       </div>
     </div>
   );

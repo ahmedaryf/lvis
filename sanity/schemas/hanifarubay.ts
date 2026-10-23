@@ -25,10 +25,39 @@ export const hanifarubay = defineType({
     }),
 
     defineField({
+      name: "detailDescription",
+      title: "Detail Description",
+      type: "array",
+      of: [{ type: "block" }],
+    }),
+
+    defineField({
       name: "coverPhoto",
       title: "Cover Photo",
       type: "image",
       options: { hotspot: true },
+    }),
+    defineField({
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "gallaryImages",
+              title: "Images",
+              type: "image",
+            }),
+            defineField({
+              name: "imageTitle",
+              title: "Image Title",
+              type: "string",
+            }),
+          ],
+        },
+      ],
     }),
   ],
 });

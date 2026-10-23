@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: `${guestName} <noreply@resend.maldiveslocaltourism.com>`,
       to: "ahmd.areef@gmail.com",
-      bcc: "ahmedlisham@gmail.com",
+      // bcc: "ahmedlisham@gmail.com",
       subject: "Availability Request",
       react: Inquery({
         property,
