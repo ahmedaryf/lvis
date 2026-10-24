@@ -36,10 +36,10 @@ export default async function Footer() {
     <footer className='min-h-[60vh] w-screen bg-zinc-50 duration-500 dark:border-t border-white  flex flex-col justify-between py-6 '>
       <div className=' md:flex justify-between items-start px-10 w-full md:w-[80vw] mx-auto mt-12 '>
         <div className='flex md:hidden gap-2 md:gap-4 justify-center items-center'>
-          <Link href={""}>
+          <Link href={"https://www.facebook.com/LVISblancura"}>
             <AiFillFacebook size={24} />
           </Link>
-          <Link href={""}>
+          <Link href={"https://www.instagram.com/lvishotels"}>
             <AiFillInstagram size={26} />
           </Link>
         </div>
@@ -68,10 +68,10 @@ export default async function Footer() {
         </div>
 
         <div className='hidden md:flex gap-2 md:gap-4 justify-center items-center'>
-          <Link href={""}>
+          <Link href={"https://www.facebook.com/LVISblancura"}>
             <AiFillFacebook size={24} />
           </Link>
-          <Link href={""}>
+          <Link href={"https://www.instagram.com/lvishotels"}>
             <AiFillInstagram size={26} />
           </Link>
         </div>

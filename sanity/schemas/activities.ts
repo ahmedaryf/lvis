@@ -77,8 +77,7 @@ export const activities = defineType({
             defineField({
               name: "itemPrice",
               title: "Item Price",
-              type: "number",
-              validation: (Rule) => Rule.required(),
+              type: "string",
             }),
           ],
         },
