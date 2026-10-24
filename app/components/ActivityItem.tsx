@@ -36,9 +36,9 @@ export default function ActivityItem({ data }: any) {
                 </div>
               </div>
               <div className=' flex items-center justify-center gap-2 bg-cyan-500 mt-6 rounded'>
-                <p className='text-zinc-100 body-font'>Price:</p>
-                <p className='text-zinc-100 body-font text-sm'>
-                  ${activity.itemPrice}/- per person
+                {/* <p className='text-zinc-100 body-font'>Price:</p> */}
+                <p className='text-zinc-100 body-font text-sm capitalize'>
+                  {activity.itemPrice}
                 </p>
               </div>
             </div>
