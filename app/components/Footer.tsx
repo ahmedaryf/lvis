@@ -3,6 +3,8 @@ import { MailIcon } from "lucide-react";
 import Link from "next/link";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 
+import { IoLogoYoutube } from "react-icons/io";
+
 import { FaPhone } from "react-icons/fa6";
 // import { ThemeToggler } from "./ThemeToggler";
 // import { IoIosMail } from "react-icons/io";
@@ -42,6 +44,9 @@ export default async function Footer() {
           <Link href={"https://www.instagram.com/lvishotels"}>
             <AiFillInstagram size={26} />
           </Link>
+          <Link href={"https://www.youtube.com/@LVISMaldives"}>
+            <IoLogoYoutube size={26} />
+          </Link>
         </div>
         <div className='mt-12 md:mt-0'>
           <h1 className='text-zinc-600 text-base md:text-xl body-font mb-2 border-b-2 border-b-zinc-200 text-center '>
@@ -73,6 +78,9 @@ export default async function Footer() {
           </Link>
           <Link href={"https://www.instagram.com/lvishotels"}>
             <AiFillInstagram size={26} />
+          </Link>
+          <Link href={"https://www.youtube.com/@LVISMaldives"}>
+            <IoLogoYoutube size={26} />
           </Link>
         </div>
 
