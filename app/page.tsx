@@ -67,7 +67,7 @@ export default async function page() {
       {/* <HeroVideoComponent /> */}
       <OptimizedVideoComponent />
 
-      <div className='min-h-screen w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
+      <div className=' w-full md:w-[80vw] mx-auto  mb-12 md:mb-24'>
         <MainTitle text={aboutus[0].intro} />
         <div className=''>
           <PropertiesHomePage data={properties} />

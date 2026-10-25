@@ -1,4 +1,5 @@
 import { DialogComponent } from "@/app/components/DialogComponent";
+import { DialogComponentRoomType } from "@/app/components/DialogComponentRoomType";
 import GalleryComponent from "@/app/components/GalleryComponent";
 import BackButton from "@/app/components/GoBack";
 import InquiryForm from "@/app/components/InquiryForm";
@@ -15,7 +16,12 @@ async function getProperties(slug: string) {
     shortDescription,
     slug,
     images,
-    propertyDetails
+    propertyDetails,
+    roomTypes[]{
+      roomType,
+      roomCoverPhoto,
+      roomPhotos[]
+    }
   }[0]`;
   const data = await client.fetch(
     query,
@@ -67,8 +73,30 @@ export default async function SlugPage({
             )}
           </div>
         </div>
+        {/* <div className=' grid grid-cols-1 md:grid-cols-2 gap-4 px-6 md:px-0'>
+          {properties.roomTypes.map((room: any, index: any) => (
+            <div key={index}>
+              <div>
+                <Image
+                  src={urlFor(room.roomCoverPhoto)}
+                  width={600}
+                  height={500}
+                  alt='Cover Photo'
+                  className='aspect-4/3 object-cover rounded-md'
+                />
+              </div>
+              <h5 className='text-base md:text-xl text-zinc-400 body-font text-center mt-2'>
+                {room.roomType}
+              </h5>
+            </div>
+          ))}
+        </div> */}
+        <DialogComponentRoomType data={properties} />
 
         <div className='px-6 lg:px-0'>
+          <h5 className='text-xl md:text-2xl text-zinc-600 text-center  uppercase body-font mt-12 md:mt-24'>
+            Photo Gallery
+          </h5>
           <GalleryComponent data={properties.images} />
         </div>
       </div>

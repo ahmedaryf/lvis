@@ -2,6 +2,7 @@ import { client } from "@/sanity/lib/client";
 import { MailIcon } from "lucide-react";
 import Link from "next/link";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
+import { FaWhatsapp } from "react-icons/fa";
 
 import { IoLogoYoutube } from "react-icons/io";
 
@@ -55,7 +56,7 @@ export default async function Footer() {
           <div className='flex flex-col items-center md:items-start gap-1'>
             <div className='flex gap-2 items-center mb-2'>
               <FaPhone size={16} />
-              <Link href={"tel:"}>
+              <Link href={`tel:${contacts[0].contact}`}>
                 <p className='text-zinc-600 text-sm md:text-base body-font'>
                   Phone: {contacts[0].contact}
                 </p>
@@ -63,11 +64,19 @@ export default async function Footer() {
             </div>
             <div className='flex gap-2 items-center mb-2'>
               <MailIcon size={16} />
-              <Link href={"tel:"}>
+              <Link href={`mailto:${contacts[1].contact}`}>
                 <p className='text-zinc-600 text-sm md:text-base body-font'>
                   Email: {contacts[1].contact}
                 </p>
               </Link>
+            </div>
+
+            <div className='flex gap-2 items-center mb-2'>
+              <FaWhatsapp size={18} />
+
+              <p className='text-zinc-600 text-sm md:text-base body-font'>
+                WhatsApp: {contacts[2]?.contact}
+              </p>
             </div>
           </div>
         </div>

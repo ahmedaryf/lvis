@@ -11,7 +11,7 @@ async function getLocationData() {
     coverPhoto,
     description,
     detailDescription,
-    images
+    images,
   }`;
   const data = await client.fetch(query, {}, { next: { revalidate: 60 } });
   return data;

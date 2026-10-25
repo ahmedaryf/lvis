@@ -20,7 +20,7 @@ export function DialogComponent({ children }: any) {
             Inquiry Form
           </button>
         </DialogTrigger>
-        <DialogContent className='sm:max-w-sm'>
+        <DialogContent className=' !h-[85vh] !max-h-[85vh]'>
           <DialogHeader>
             <DialogTitle></DialogTitle>
             <DialogDescription></DialogDescription>

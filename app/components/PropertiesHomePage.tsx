@@ -126,7 +126,7 @@ export default function PropertiesHomePage({ data }: { data: any }) {
               />
             </div>
             <div className='text-center w-full md:w-1/3 px-6 text leading-8'>
-              <h5 className='text-xl md:text-3xl text-zinc-400 mb-4 uppercase body-font'>
+              <h5 className='text-xl md:text-3xl text-cyan-500 mb-4 uppercase body-font'>
                 {item.propertyName}
               </h5>
               <h5 className='text-zinc-500 body-font'>
