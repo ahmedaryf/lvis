@@ -21,11 +21,11 @@ export default function Accordions({ data }: any) {
             <div key={item.id} className='pb-2 pt-1'>
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className='text-sm md:text-base text-zinc-700 px-4 md:px-12 py-3 bg-cyan-500/20  w-full text-start rounded-md cursor-pointer body-font'>
+                className='text-sm md:text-base text-zinc-700 px-4 md:px-12 py-3 bg-black/10  w-full text-start rounded-md cursor-pointer body-font'>
                 {item.question} {item.name}
               </button>
               <Collapse isOpened={openAccordion === item.id}>
-                <div className='text-sm md:text-base prose dark:prose-invert text-zinc-500  custom-prose text-justify px-4 md:px-12 bg-cyan-50 py-4 rounded-b-md body-font'>
+                <div className='text-sm md:text-base prose dark:prose-invert text-zinc-500  custom-prose text-justify px-4 md:px-12 bg-black/5 py-4 rounded-b-md body-font'>
                   {item.answer && <PortableText value={item.answer} />}
                 </div>
               </Collapse>

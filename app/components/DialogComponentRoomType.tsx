@@ -38,7 +38,7 @@ export function DialogComponentRoomType({ data }: any) {
             </button>
           </DialogTrigger>
 
-          <DialogContent className='!fixed !left-0 !top-[5vh] !translate-x-0 !translate-y-0 !w-screen  !max-w-none !h-[90vh] !max-h-[90vh] !rounded-none p-6 overflow-y-auto'>
+          <DialogContent className='!fixed !left-0 !top-[5vh] !translate-x-0 !translate-y-0 !w-screen  !max-w-none !h-[90vh] md:!h-[95vh] !max-h-[95vh] !rounded-none p-6 overflow-y-auto'>
             <DialogHeader>
               <DialogTitle className='body-font text-center pt-6 text-base md:text-2xl text-zinc-400  capitalize'>
                 {room.roomType}
