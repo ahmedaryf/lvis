@@ -19,7 +19,7 @@ export default async function Dinning() {
   const dinnings = await getDinningData();
   return (
     <div className='px-4'>
-      <h3 className='text-xl md:text-3xl text-zinc-400 text-center mb-4 lg:mb-8 uppercase body-font'>
+      <h3 className='text-xl md:text-3xl text-cyan-500 text-center mb-4 lg:mb-8 uppercase body-font'>
         The Flavors of LVIS
       </h3>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>

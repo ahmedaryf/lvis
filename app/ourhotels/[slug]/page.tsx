@@ -73,7 +73,7 @@ export default async function SlugPage({
             )}
           </div>
         </div>
-        <div className=' grid grid-cols-1 md:grid-cols-2 gap-4 px-6 md:px-0'>
+        {/* <div className=' grid grid-cols-1 md:grid-cols-2 gap-4 px-6 md:px-0'>
           {properties.roomTypes.map((room: any, index: any) => (
             <div key={index}>
               <div>
@@ -90,8 +90,8 @@ export default async function SlugPage({
               </h5>
             </div>
           ))}
-        </div>
-        {/* <DialogComponentRoomType data={properties} /> */}
+        </div> */}
+        <DialogComponentRoomType data={properties} />
 
         <div className='px-6 lg:px-0'>
           <h5 className='text-xl md:text-2xl text-zinc-600 text-center  uppercase body-font mt-12 md:mt-24'>

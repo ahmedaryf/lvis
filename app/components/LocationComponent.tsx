@@ -22,7 +22,7 @@ export default async function LocationComponent() {
 
   return (
     <div className='px-4'>
-      <h2 className='text-xl md:text-3xl text-zinc-400 text-center  uppercase body-font'>
+      <h2 className='text-xl md:text-3xl text-cyan-500 text-center  uppercase body-font'>
         {location[0].locationTitle}
       </h2>
       <h5 className='text-sm md:text-xl text-black/30 text-center mb-4 lg:mb-6 body-font'>
