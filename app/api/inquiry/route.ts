@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     });
 
     await resend.emails.send({
-      from: `${guestName} <noreply@resend.maldiveslocaltourism.com>`,
+      from: `${guestName} <noreply@inquiry.lvishotelsmaldives.com>`,
       to: "reservations@lvishotels.com",
       bcc: "info@lvishotels.com",
       subject: "Website Inquiry",
