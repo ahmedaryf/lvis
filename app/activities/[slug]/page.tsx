@@ -47,7 +47,7 @@ export default async function page({
           alt='Image'
           width={1000}
           height={800}
-          className='aspect-4/3 lg:aspect-5/2 object-cover object-center overflow-hidden w-full '
+          className='aspect-4/3 lg:aspect-6/3 object-cover object-center overflow-hidden w-full '
         />
         <div className='pt-4 px-4 lg:px-8 lg:pt-8'>
           <BackButton />
