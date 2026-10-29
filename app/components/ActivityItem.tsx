@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ActivityItem({ data }: any) {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 md:pb-24'>
       {data?.map((activity: any, index: number) => {
         return (
           <div key={index} className='bg-gray-50 rounded-xl shadow-2xl'>
@@ -14,7 +14,7 @@ export default function ActivityItem({ data }: any) {
                 width={600}
                 height={400}
                 alt='Item Photo'
-                className='aspect-4/3 object-cover rounded-t-xl w-full'
+                className='aspect-4/3 object-cover rounded-t-xl w-full object-bottom'
               />
             </div>
             <div className='px-4 py-4'>
